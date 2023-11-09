@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/auth/phone_number.dart';
 import 'package:whatsapp_clone/utilities/colors.dart';
 import 'package:whatsapp_clone/auth/create_your_profile.dart';
 
@@ -81,7 +82,7 @@ class AgreeAndContine extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SetupProfile(),
+                            builder: (context) => PhoneNumber(),
                           ),
                         );
                       },

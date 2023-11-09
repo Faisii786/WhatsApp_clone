@@ -14,8 +14,6 @@ class MyButoon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 310,
-      height: 45,
       decoration: BoxDecoration(
           //color: const Color.fromARGB(255, 26, 114, 29),
           color: AuthBtnColor,

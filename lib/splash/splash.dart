@@ -33,23 +33,26 @@ class _SplashScrenState extends State<SplashScren> {
         ),
         bottomNavigationBar: const BottomAppBar(
           surfaceTintColor: Colors.transparent,
-          child: Column(
-            children: [
-              Text(
-                "from",
-                style: TextStyle(fontSize: 18),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.whatshot),
-                  Text(
-                    "Meta",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  ),
-                ],
-              )
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text(
+                  "from",
+                  style: TextStyle(fontSize: 18),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.whatshot),
+                    Text(
+                      "Meta",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
         body: Column(

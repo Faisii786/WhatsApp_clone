@@ -79,14 +79,16 @@ class _PhoneNumberState extends State<PhoneNumber> {
         child: ScaffoldMessenger(
           key: SnakBarKey,
           child: Scaffold(
-            body: Center(
+            body: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     "Verify Your Number",
                     style: GoogleFonts.alatsi(
-                        fontSize: 22,
-                        color: Color.fromARGB(255, 61, 50, 204)),
+                        fontSize: 22, color: Color.fromARGB(255, 61, 50, 204)),
                   ),
                   SizedBox(
                     height: 2,
@@ -101,83 +103,71 @@ class _PhoneNumberState extends State<PhoneNumber> {
                   SizedBox(
                     height: 40,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 1),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 50,
-                              child: TextFormField(
-                                controller: countrycontroller,
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    prefixIcon: TextButton(
-                                      onPressed: () {
-                                        showCountryPicker(
-                                          favorite: ['PK'],
-                                          countryListTheme:
-                                              CountryListThemeData(
-                                                  backgroundColor:
-                                                      Colors.grey[300],
-                                                  bottomSheetHeight: 400,
-                                                  flagSize: 20,
-                                                  inputDecoration: InputDecoration(
-                                                      hintText:
-                                                          'Enter Country Name',
-                                                      labelText:
-                                                          'Search Country'),
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                    topRight:
-                                                        Radius.circular(5),
-                                                    topLeft:
-                                                        Radius.circular(5),
-                                                  )),
-                                          context: context,
-                                          onSelect: (Country country) {
-                                            countryvalue =
-                                                country.phoneCode;
-                                            setState(() {});
-                                          },
-                                        );
-                                      },
-                                      child: Text(
-                                        "+$countryvalue",
-                                      ),
-                                    )),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 3),
-                              child: Text(
-                                "|",
-                                style: TextStyle(
-                                    fontSize: 35,
-                                    color:
-                                        Color.fromARGB(255, 104, 102, 102)),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Expanded(
-                              child: TextFormField(
-                                controller: phonecontroller,
-                                keyboardType: TextInputType.phone,
-                                decoration: InputDecoration(
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 1),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 50,
+                            child: TextFormField(
+                              controller: countrycontroller,
+                              decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: 'Phone',
-                                ),
+                                  prefixIcon: TextButton(
+                                    onPressed: () {
+                                      showCountryPicker(
+                                        favorite: ['PK'],
+                                        countryListTheme: CountryListThemeData(
+                                            backgroundColor: Colors.grey[300],
+                                            bottomSheetHeight: 400,
+                                            flagSize: 20,
+                                            inputDecoration: InputDecoration(
+                                                hintText: 'Enter Country Name',
+                                                labelText: 'Search Country'),
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(5),
+                                              topLeft: Radius.circular(5),
+                                            )),
+                                        context: context,
+                                        onSelect: (Country country) {
+                                          countryvalue = country.phoneCode;
+                                          setState(() {});
+                                        },
+                                      );
+                                    },
+                                    child: Text(
+                                      "+$countryvalue",
+                                    ),
+                                  )),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 3),
+                            child: Text(
+                              "|",
+                              style: TextStyle(
+                                  fontSize: 35,
+                                  color: Color.fromARGB(255, 104, 102, 102)),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Expanded(
+                            child: TextFormField(
+                              controller: phonecontroller,
+                              keyboardType: TextInputType.phone,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Phone',
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
